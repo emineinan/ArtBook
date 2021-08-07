@@ -6,12 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentFactory
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.RequestManager
 import com.example.artbook.R
 import com.example.artbook.databinding.FragmentArtBinding
 import com.example.artbook.databinding.FragmentArtDetailsBinding
+import javax.inject.Inject
 
-class ArtDetailsFragment : Fragment(R.layout.fragment_art_details) {
+class ArtDetailsFragment @Inject constructor(
+    private val glide: RequestManager,
+) : Fragment(R.layout.fragment_art_details) {
 
     private var _binding: FragmentArtDetailsBinding? = null
     private val binding get() = _binding!!

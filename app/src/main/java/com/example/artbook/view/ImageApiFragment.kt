@@ -5,11 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.RequestManager
 import com.example.artbook.R
 import com.example.artbook.databinding.FragmentArtBinding
 import com.example.artbook.databinding.FragmentImageApiBinding
+import javax.inject.Inject
 
-class ImageApiFragment : Fragment(R.layout.fragment_image_api) {
+class ImageApiFragment @Inject constructor(
+    val glide: RequestManager
+) : Fragment(R.layout.fragment_image_api) {
 
     private var _binding: FragmentImageApiBinding? = null
     private val binding get() = _binding!!
